@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+.app {
+	display: flex;
+	align-items: center;
+	width: 100vw;
+	max-height: 100vh;
+	flex-direction: column;
+	box-sizing: border-box;
+	margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 2rem 3rem;
+	border-bottom: solid 2px #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo {
+	width: 300px;
+	height: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.cropToolContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	box-sizing: border-box;
+	padding-inline: 100px;
+}
+
+.cropContainer {
+	width: 80vw;
+	height: auto;
+	display: flex;
   flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.previewContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.buttonsContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+}
+
+.button {
+	padding: 1rem 2rem;
+	border-radius: 1rem;
+	border: solid 1px #333;
+	background-color: #333;
+	color: white;
+	font-size: large;
+	margin-inline: 1rem;
+	transition: all 350ms ease;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.button:hover {
+	scale: 1.1;
+}
+.headerTextContainer {
+	padding: 1rem;
+	flex: 1;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.fileInputContainer {
+	flex: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type='file'] {
+	padding: 1rem;
+	font-size: 1.5rem;
+}
+
+.previewContainer {
+	max-width: 100vw;
 }
