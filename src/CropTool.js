@@ -1,11 +1,17 @@
 import React, { useState, createRef } from 'react';
 import Cropper from 'react-cropper';
 import 'cropperjs/dist/cropper.css';
+import download from 'downloadjs';
 
 export const CropTool = () => {
 	const [image, setImage] = useState(null);
 	const [cropData, setCropData] = useState(null);
+	const [filename, setFilename] = useState(null);
 	const cropperRef = createRef();
+
+	const handleDownload = () => {
+		download(cropData, `${filename}-edited`, 'image/png');
+	};
 	const onChange = (e) => {
 		e.preventDefault();
 		let files;
@@ -17,6 +23,8 @@ export const CropTool = () => {
 		const reader = new FileReader();
 		reader.onload = () => {
 			setImage(reader.result);
+			setCropData(null);
+			setFilename(files[0].name);
 		};
 		reader.readAsDataURL(files[0]);
 	};
@@ -101,18 +109,23 @@ export const CropTool = () => {
 					center={true}
 				/>
 			</div>
+			<div className="buttonsContainer">
+				<div className="button" onClick={getCropData}>
+					Crop
+				</div>
+				<div className="button" onClick={fitAll}>
+					Fit All
+				</div>
+			</div>
 
 			<div className="previewContainer">
-				<div className="buttonsContainer">
-					<div className="button" onClick={getCropData}>
-						Crop
-					</div>
-					<div className="button" onClick={fitAll}>
-						Fit All
+				<div className="previewHeader">
+					<h1>Preview</h1>
+					<div className="button" onClick={handleDownload}>
+						Download
 					</div>
 				</div>
 
-				<h1>Preview</h1>
 				<div
 					style={{
 						width: '100%',
