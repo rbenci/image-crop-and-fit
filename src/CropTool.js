@@ -10,7 +10,9 @@ export const CropTool = () => {
 	const cropperRef = createRef();
 
 	const handleDownload = () => {
-		download(cropData, `${filename}-edited`, 'image/png');
+		const file = filename.split('.');
+		const newFileName = file[0] + '-edited.' + file[1];
+		download(cropData, newFileName, 'image/png');
 	};
 	const onChange = (e) => {
 		e.preventDefault();
