@@ -85,6 +85,20 @@ export const CropTool = () => {
 			<div className="cropContainer">
 				<input type="file" onChange={onChange} />
 
+				{image && (
+					<p>
+						<strong>Instructions: </strong>
+						Adjust the position of the highlighted rectangle below by dragging
+						it, and zooming in and out using your mouse. The highlighted
+						rectangle represents the part of the image that will be included
+						after cropping it, so it can be moved around to fit your desired
+						purpose. The dimensions of the rectangle will always stay the same,
+						as they are predefined based on the website UI that they will be a
+						part of. If you do not want to crop your image, you can choose to
+						fit it instead. Check the preview section at the bottom to see what
+						your final image looks like.
+					</p>
+				)}
 				<Cropper
 					ref={cropperRef}
 					style={{ height: 'auto', width: '80vw' }}
