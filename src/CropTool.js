@@ -10,7 +10,14 @@ export const CropTool = () => {
 	const cropperRef = createRef();
 
 	const handleDownload = () => {
-		download(cropData, `${filename}-edited`, 'image/png');
+		const filenameWithoutExtension =
+			filename.substr(0, filename.lastIndexOf('.')) || filename;
+		const fileExtension = filename.substr(filename.lastIndexOf('.'));
+		download(
+			cropData,
+			`${filenameWithoutExtension}-edited${fileExtension}`,
+			'image/png'
+		);
 	};
 	const onChange = (e) => {
 		e.preventDefault();
