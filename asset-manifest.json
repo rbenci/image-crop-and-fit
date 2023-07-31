@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/image-crop-and-fit/static/css/main.33ef7ebc.css",
-    "main.js": "/image-crop-and-fit/static/js/main.27a5cc7b.js",
+    "main.js": "/image-crop-and-fit/static/js/main.931bffaf.js",
     "static/media/logo.png": "/image-crop-and-fit/static/media/logo.bb7896765213e883b876.png",
     "index.html": "/image-crop-and-fit/index.html",
     "main.33ef7ebc.css.map": "/image-crop-and-fit/static/css/main.33ef7ebc.css.map",
-    "main.27a5cc7b.js.map": "/image-crop-and-fit/static/js/main.27a5cc7b.js.map"
+    "main.931bffaf.js.map": "/image-crop-and-fit/static/js/main.931bffaf.js.map"
   },
   "entrypoints": [
     "static/css/main.33ef7ebc.css",
-    "static/js/main.27a5cc7b.js"
+    "static/js/main.931bffaf.js"
   ]
 }
